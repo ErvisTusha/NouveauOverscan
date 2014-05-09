@@ -101,6 +101,9 @@
           <property name="enabled">
            <bool>false</bool>
           </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -110,6 +113,9 @@
          <widget class="QSpinBox" name="spinBox">
           <property name="enabled">
            <bool>false</bool>
+          </property>
+          <property name="maximum">
+           <number>100</number>
           </property>
          </widget>
         </item>
