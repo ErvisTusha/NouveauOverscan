@@ -2,13 +2,11 @@
 #include "ui_mainwindow.h"
 #include <QProcess>
 #include <QStringList>
-#include <QPixmap>
 #include <QScreen>
 #include <QFile>
-#include <QDebug>
-#include <QDesktopServices>
 #include <QTextStream>
 #include <QDir>
+#include <QStandardPaths>
 //TODO comment code
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -33,7 +31,6 @@ void MainWindow::on_close_clicked()
 
 void MainWindow::on_apply_clicked()
 {
-    QString username;
     QString ASpath ;
     QProcess process;
     QStringList varop;
@@ -41,30 +38,20 @@ void MainWindow::on_apply_clicked()
     QString ASContent;
     QString ASpathSH;
     QString ASContentSH;
-
-    varop << "-c" << "whoami"  ;
-    process.start("/bin/sh", varop , QIODevice::ReadOnly);
-    process.waitForFinished(-1);
+    QString homeLocation  = QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
 
 
-    username= process.readAllStandardOutput();
-
-
-
-    ASpath= "/home/";
-    ASpath +=username.simplified();
+    ASpath= homeLocation;
     ASpath +="/.config/autostart/nouveauoverscan.desktop";
 
     QFile autostart(ASpath);
 
-    ASpathSH= "/home/";
-    ASpathSH +=username.simplified();
+    ASpathSH= homeLocation;
     ASpathSH +="/.config/nouveauoverscan/nouveauoverscan.sh";
 
 
     QString ASpathSHp;
-    ASpathSHp= "/home/";
-    ASpathSHp +=username.simplified();
+    ASpathSHp= homeLocation;
     ASpathSHp +="/.config/nouveauoverscan/";
 
     QFile autostartSH(ASpathSH);
@@ -78,8 +65,8 @@ void MainWindow::on_apply_clicked()
 
         ASContent = "[Desktop Entry]\n";
         ASContent += "Type=Application\n";
-        ASContent += "Exec=/home/";
-        ASContent += username.simplified();
+        ASContent += "Exec=";
+        ASContent += homeLocation;
         ASContent += "/.config/nouveauoverscan/nouveauoverscan.sh";
         ASContent += "\n";
         ASContent += "Hidden=false\n";
