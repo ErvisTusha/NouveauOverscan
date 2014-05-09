@@ -87,9 +87,9 @@ void MainWindow::on_apply_clicked()
         }
 
         ASContentSH= "#!/bin/bash \n";
-        ASContentSH+= "/usr/bin/xrandr --output ";
+        ASContentSH+= "xrandr --output ";
         ASContentSH+= QGuiApplication::primaryScreen()->name();
-        ASContentSH+= " --set underscan on & /usr/bin/xrandr --output HDMI-1 --set \"underscan hborder\" ";
+        ASContentSH+= " --set underscan on & xrandr --output HDMI-1 --set \"underscan hborder\" ";
         ASContentSH+= QString::number( ui->horizontalSlider->value());
 
         ASContentSH+= "\n";
@@ -129,7 +129,7 @@ void MainWindow::fixoverscan(int arg1){
     QStringList varop;
     QStringList varopl;
     QString  varops;
-    varopl << "/usr/bin/xrandr --output "<<QGuiApplication::primaryScreen()->name() << " --set underscan on &  /usr/bin/xrandr --output HDMI-1 --set \"underscan hborder\" " << QString::number(arg1);
+    varopl << "xrandr --output "<<QGuiApplication::primaryScreen()->name() << " --set underscan on &  xrandr --output HDMI-1 --set \"underscan hborder\" " << QString::number(arg1);
     varops = varopl.join(' ');
     varop << "-c" << varops  ;
     process.start("/bin/sh", varop , QIODevice::ReadOnly);
