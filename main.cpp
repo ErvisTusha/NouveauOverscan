@@ -11,15 +11,15 @@ int main(int argc, char *argv[])
     process.waitForFinished();
     QString output;
     output =  process.readAllStandardOutput();
-    if (output==""){
-        QMessageBox msgBox;
-        msgBox.setIcon(QMessageBox::Critical);
-        msgBox.setText("Please install XRandR");
-        msgBox.setInformativeText("<a href=\"http://www.x.org/wiki/Projects/XRandR/\">http://www.x.org/wiki/Projects/XRandR/</a>");
-        msgBox.setStandardButtons(QMessageBox::Close);
-        msgBox.exec();
-        return 0 ;
-    }
+//    if (output==""){
+//        QMessageBox msgBox;
+//        msgBox.setIcon(QMessageBox::Critical);
+//        msgBox.setText("Please install XRandR");
+//        msgBox.setInformativeText("<a href=\"http://www.x.org/wiki/Projects/XRandR/\">http://www.x.org/wiki/Projects/XRandR/</a>");
+//        msgBox.setStandardButtons(QMessageBox::Close);
+//        msgBox.exec();
+//        return 0 ;
+//    }
 
     MainWindow w;
     w.show();
