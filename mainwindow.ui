@@ -32,13 +32,13 @@
     </property>
     <item row="0" column="0">
      <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
+      <item alignment="Qt::AlignLeft|Qt::AlignTop">
        <widget class="QLabel" name="label_2">
         <property name="text">
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="images.qrc">:/images/arrow1.jpg</pixmap>
+         <pixmap resource="images.qrc">:/images/arrow1.png</pixmap>
         </property>
        </widget>
       </item>
@@ -55,114 +55,30 @@
         </property>
        </spacer>
       </item>
-      <item>
+      <item alignment="Qt::AlignLeft|Qt::AlignBottom">
        <widget class="QLabel" name="label">
         <property name="text">
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="images.qrc">:/images/arrow.jpg</pixmap>
+         <pixmap resource="images.qrc">:/images/arrow.png</pixmap>
         </property>
        </widget>
       </item>
      </layout>
     </item>
     <item row="0" column="1">
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <spacer name="verticalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item alignment="Qt::AlignHCenter">
-       <widget class="QCheckBox" name="checkBox">
-        <property name="font">
-         <font>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>OverScan</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QSlider" name="horizontalSlider">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="maximum">
-           <number>100</number>
-          </property>
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QSpinBox" name="spinBox">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="maximum">
-           <number>100</number>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QPushButton" name="apply">
-          <property name="text">
-           <string>Apply </string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="close">
-          <property name="text">
-           <string>Close</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <spacer name="verticalSpacer_4">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
+     <layout class="QVBoxLayout" name="verticalLayout"/>
     </item>
     <item row="0" column="2">
      <layout class="QVBoxLayout" name="verticalLayout_3">
-      <item>
+      <item alignment="Qt::AlignRight|Qt::AlignTop">
        <widget class="QLabel" name="label_3">
         <property name="text">
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="images.qrc">:/images/arrow2.jpg</pixmap>
+         <pixmap resource="images.qrc">:/images/arrow2.png</pixmap>
         </property>
        </widget>
       </item>
@@ -179,13 +95,13 @@
         </property>
        </spacer>
       </item>
-      <item>
+      <item alignment="Qt::AlignRight|Qt::AlignBottom">
        <widget class="QLabel" name="label_4">
         <property name="text">
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="images.qrc">:/images/arrow3.jpg</pixmap>
+         <pixmap resource="images.qrc">:/images/arrow3.png</pixmap>
         </property>
        </widget>
       </item>
@@ -198,38 +114,5 @@
  <resources>
   <include location="images.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>horizontalSlider</sender>
-   <signal>sliderMoved(int)</signal>
-   <receiver>spinBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>395</x>
-     <y>303</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>487</x>
-     <y>303</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>spinBox</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>horizontalSlider</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>473</x>
-     <y>311</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>423</x>
-     <y>312</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
